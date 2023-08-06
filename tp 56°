@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+string ProcesaPalabra(string palabra) {
+    for (char &caracter : palabra) {
+        if (caracter == 'A') {
+            caracter = 'B';
+        }
+    }
+    return palabra;
+}
+
+int main() {
+    string palabra;
+    cout << "Ingrese una palabra: ";
+    cin >> palabra;
+
+    string palabraModificada = ProcesaPalabra(palabra);
+    cout<<"Palabra modificada: "<<palabraModificada<<endl;
+
+    return 0;
+}
