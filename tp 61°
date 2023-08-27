@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+bool Esgrito(string frase) {
+    for (char caracter : frase) {
+        if ((caracter) && !(caracter)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    string frase;
+    cout << "Ingrese una frase: ";
+    getline(cin, frase);
+
+    if (Esgrito(frase)) {
+        cout << "ESGRITO" << endl;
+    } else {
+        cout << "escrito" << endl;
+    }
+
+    return 0;
+}
