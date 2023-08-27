@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+int ContarVocales(string frase) {
+    int contador = 0;
+    for (char caracter : frase) {
+        char caracterMin = caracter;
+        if (caracterMin >= 'A' && caracterMin <= 'Z') {
+            caracterMin += 'a' - 'A';
+        }
+        if (caracterMin == 'a' || caracterMin == 'e' || caracterMin == 'i' || caracterMin == 'o' || caracterMin == 'u') {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+int main() {
+    string frase;
+    cout << "Ingrese una frase: ";
+    getline(cin, frase);
+
+    int cantidadVocales = ContarVocales(frase);
+    cout << "La frase tiene " << cantidadVocales << " vocal(es)." <<endl;
+
+    return 0;
+}
