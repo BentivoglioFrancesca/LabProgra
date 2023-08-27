@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+string CambiarPalabra(string palabra, int posicion) {
+    if (posicion >= 0 && posicion < palabra()) {
+        palabra[posicion] = 'X';
+    }
+    return palabra;
+}
+
+int main() {
+    string palabra;
+    cout << "Ingrese una palabra: ";
+    cin >> palabra;
+
+    int posicion;
+    cout << "Ingrese la posición a cambiar (0 a " << palabra - 1 << "): ";
+    cin >> posicion;
+
+    string palabraCambiada = CambiarPalabra(palabra, posicion);
+    cout << "Palabra con cambio: " << palabraCambiada <<endl;
+
+    return 0;
+}
