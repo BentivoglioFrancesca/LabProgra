@@ -1,0 +1,99 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+float CalcularPromedio(const vector<int>& A) {
+    float suma = 0;
+    for (int elemento : A) {
+        suma += elemento;
+    }
+    return suma;
+}
+
+vector<int> GenerarVectorB(const vector<int>& A, float promedio) {
+    vector<int> B;
+    for (int elemento : A) {
+        if (elemento > promedio) {
+            B.push_back(elemento);
+        }
+    }
+    return B;
+}
+
+int ContarMultiplosDosTres(const vector<int>& A) {
+    int contador = 0;
+    for (int elemento : A) {
+        if (elemento % 2 == 0 && elemento % 3 == 0) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+int CalcularSuma(const vector<int>& A) {
+    int suma = 0;
+    for (int elemento : A) {
+        suma += elemento;
+    }
+    return suma;
+}
+
+vector<int> GenerarVectorC(const vector<int>& A) {
+    vector<int> C;
+    for (int elemento : A) {
+        C.push_back(elemento * 2);
+    }
+    return C;
+}
+
+int main() {
+    int N;
+
+    cout << "Ingrese la cantidad de elementos del vector: ";
+    cin >> N;
+
+    if (N <= 0) {
+        cout << "tiene que ser un número positivo." << endl;
+        return 1;
+    }
+
+    srand(static_cast<unsigned>(time(nullptr)));
+
+    vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        A[i] = rand() % 32000;
+    }
+
+    float promedio = CalcularPromedio(A);
+    vector<int> B = GenerarVectorB(A, promedio);
+    int multiplosDosTres = ContarMultiplosDosTres(A);
+    int suma = CalcularSuma(A);
+    vector<int> C = GenerarVectorC(A);
+
+    cout << "Vector A: ";
+    for (int elemento : A) {
+        cout << elemento << " ";
+    }
+    cout << endl;
+
+    cout << "Promedio en A: " << promedio << endl;
+
+    cout << "Vector B ";
+    for (int elemento : B) {
+        cout << elemento << " ";
+    }
+    cout << endl;
+
+    cout << "Cantidad de elementos que son múltiplos de 2 y 3: " << multiplosDosTres << endl;
+
+    cout << "Suma de elementos en A: " << suma << endl;
+
+    cout << "Vector C ";
+    for (int elemento : C) {
+        cout << elemento << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
