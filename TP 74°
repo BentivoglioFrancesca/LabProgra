@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+
+bool EsPrimo(int numero) {
+    if (numero <= 1) {
+        return false;
+    }
+
+    if (numero <= 3) {
+        return true;
+    }
+
+    if (numero % 2 == 0 || numero % 3 == 0) {
+        return false;
+    }
+
+    for (int i = 5; i * i <= numero; i += 6) {
+        if (numero % i == 0 || numero % (i + 2) == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+vector<int> EncontrarPrimosHastaN(int N) {
+vector<int> primos;
+
+    for (int numero = 2; numero <= N; numero++) {
+        if (EsPrimo(numero)) {
+            primos.push_back(numero);
+        }
+    }
+
+    return primos;
+}
+
+int main() {
+    int N;
+
+    cout << "Ingrese un número N: ";
+    cin >> N;
+
+    if (N < 2) {
+        cout << "No hay números primos en el rango especificado." <<endl;
+        return 0;
+    }
+
+    vector<int> primos = EncontrarPrimosHastaN(N);
+
+    cout << "Números primos hasta " << N << ":" << endl;
+
+    for (int primo : primos) {
+    cout << primo << endl;
+    }
+
+    return 0;
+}
