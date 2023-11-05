@@ -1,4 +1,5 @@
-#include <bits\stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector<int>GenerarVector(vector<int> A , int n);
@@ -22,12 +23,11 @@ int main()
     cout<<endl;
     MostrarVector(B);
 
-    if (CalcularAbuela (vector <int> A, vector <int> B)) {
+    if (CalcularAbuela == 0) {
     cout << "SI" <<endl;
         } else {
     cout << "NO" <<endl;
         }
-    }
     return 0;
 }
 
